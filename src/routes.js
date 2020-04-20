@@ -5,7 +5,7 @@ const CarController = require('./controller/CarController')
 const { verifyJWT, login, logout } = require('./auth/auth.js')
 
 routes.get('/', (req, res) => {
-    return res.json('Hello World!')
+    return res.json('Hello World! 6')
 })
 
 routes.post('/login', (req, res) => {
