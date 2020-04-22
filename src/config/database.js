@@ -1,7 +1,7 @@
 module.exports = {
     dialect: 'postgres',
-    host: '127.0.0.1',
-    username: 'postgres',
+    host: '191.234.200.93',
+    username: 'lucas',
     password: '123',
     database: 'carrosnode',
     define: {

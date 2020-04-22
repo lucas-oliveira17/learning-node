@@ -16,11 +16,11 @@ routes.get('/logout', (req, res) => {
   logout(req, res)
 });
 
-routes.get('/users', verifyJWT, (req, res) => {
+routes.get('/users', (req, res) => {
   UserController.findAll(req, res)
 })
 
-routes.post('/users', (req, res) => {
+routes.post('/users', verifyJWT, (req, res) => {
   UserController.create(req, res)
 })
 
