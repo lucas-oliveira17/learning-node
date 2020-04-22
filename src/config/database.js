@@ -1,6 +1,6 @@
 module.exports = {
     dialect: 'postgres',
-    host: '191.234.200.93',
+    host: 'lucasviana.brazilsouth.azurecontainer.io',
     username: 'lucas',
     password: '123',
     database: 'carrosnode',
