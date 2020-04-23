@@ -5,7 +5,29 @@ const CarController = require('./controller/CarController')
 const { verifyJWT, login, logout } = require('./auth/auth.js')
 
 routes.get('/', (req, res) => {
-    return res.json('Hello World! 6')
+  const { Sequelize } = require('sequelize');
+
+  const sequelize = new Sequelize('carrosnode', 'lucas', '123', {
+      host: 'lucasviana.brazilsouth.azurecontainer.io',
+      dialect: 'postgres',
+      define: {
+          timestamps: true,
+          underscored: true,
+      },
+  })
+
+  const DBConnect = async () => {
+    try {
+      await sequelize.authenticate();
+      return 'Banco conectado!';
+    } catch (error) {
+      return 'Conexão com o banco sem sucesso!' + error
+    }
+  }
+
+  const ret = DBConnect().then(ret => res.json(ret))
+
+  return ret
 })
 
 routes.post('/login', (req, res) => {
