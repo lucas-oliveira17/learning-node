@@ -18,7 +18,7 @@
     "nodemon": "^2.0.3"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "cross-env NODE_ENV=development jest --coverage --color",
     "dev": "cross-env NODE_ENV=development nodemon src/server.js",
     "production": "cross-env NODE_ENV=production node src/server.js",
     "updbdev": "cross-env NODE_ENV=test sequelize db:create sequelize db:migrate",
