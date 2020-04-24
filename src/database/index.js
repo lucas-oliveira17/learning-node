@@ -4,7 +4,17 @@ const { Sequelize } = require('sequelize');
 const User = require('../model/User')
 const Car = require('../model/Car')
 
-const connection = new Sequelize(dbConfig)
+const getEnv = nodeEnv => {
+  let map = new Object();
+
+  map['development'] = dbConfig.development
+  map['test'] = dbConfig.test
+  map['production'] = dbConfig.production
+
+  return map[nodeEnv]
+}
+
+const connection = new Sequelize(getEnv(process.env.NODE_ENV))
 
 const DBConnect = async () => {
     try {
