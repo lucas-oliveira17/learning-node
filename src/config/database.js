@@ -1,23 +1,13 @@
-const { Sequelize } = require('sequelize');
-
-const sequelize = new Sequelize('carrosnode', 'lucas', '123', {
-    host: 'lucasviana.brazilsouth.azurecontainer.io',
-    dialect: 'postgres',
+const sequelize = {
+    database: process.env.DB_DATABASE,
+    username: process.env.DB_USERNAME,
+    password: process.env.DB_PASSWORD,
+    dialect: process.env.DB_DIALECT,
+    host: process.env.DB_HOST,
     define: {
         timestamps: true,
         underscored: true,
     },
-})
-
-const DBConnect = async () => {
-  try {
-    await sequelize.authenticate();
-    console.log('Connection has been established successfully.');
-  } catch (error) {
-    throw new Error(error)
-  }
 }
-
-DBConnect();
 
 module.exports = sequelize
