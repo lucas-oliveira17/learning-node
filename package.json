@@ -21,7 +21,7 @@
     "test": "cross-env NODE_ENV=development jest --coverage --color",
     "dev": "cross-env NODE_ENV=development nodemon src/server.js",
     "production": "cross-env NODE_ENV=production node src/server.js",
-    "updbdev": "cross-env NODE_ENV=test sequelize db:create sequelize db:migrate",
+    "updbdev": "cross-env NODE_ENV=development sequelize db:create sequelize db:migrate",
     "updbtest": "cross-env NODE_ENV=test sequelize db:create sequelize db:migrate",
     "updbproduction": "cross-env NODE_ENV=production sequelize db:create sequelize db:migrate"
   },
