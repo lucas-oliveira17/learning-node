@@ -36,4 +36,4 @@ const sequelize = {
     }
 }
 
-module.exports = sequelize
+module.exports = sequelize[process.env.NODE_ENV]
